@@ -1,0 +1,17 @@
+name = GSB Feature Webform CT
+description = Adds a webform content type
+core = 7.x
+package = GSB
+version = 7.x-1.0
+project = gsb_feature_webform_ct
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = webform
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[node][] = webform
+features[variable][] = menu_options_webform
+features[variable][] = menu_parent_webform
+features[variable][] = node_options_webform
+features[variable][] = node_preview_webform
+features[variable][] = node_submitted_webform
