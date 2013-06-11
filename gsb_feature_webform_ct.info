@@ -19,7 +19,6 @@ datestamp = 1367871450
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
-features[field_base][] = body
 features[field_instance][] = node-webform-body
 features[field_instance][] = node-webform-field_addthis
 features[field_instance][] = node-webform-field_body
