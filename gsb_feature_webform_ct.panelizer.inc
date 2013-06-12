@@ -20,7 +20,7 @@ function gsb_feature_webform_ct_panelizer_defaults() {
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
-  $panelizer->pipeline = 'ipe';
+  $panelizer->pipeline = 'standard';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
@@ -30,27 +30,16 @@ function gsb_feature_webform_ct_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'gsb-landing-standard-page-one';
+  $display->layout = 'flexible';
   $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'fullheader' => NULL,
-      'maintop' => NULL,
-      'mainmiddlefirst' => NULL,
-      'mainmiddlesecond' => NULL,
-      'mainbottom' => NULL,
-      'quicklinks' => NULL,
-      'sidebar' => NULL,
-    ),
-  );
+  $display->panel_settings = array();
   $display->cache = array();
   $display->title = '%node:title';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
-    $pane->panel = 'maintop';
+    $pane->pid = 'new-2';
+    $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_addthis';
     $pane->shown = TRUE;
@@ -75,18 +64,16 @@ function gsb_feature_webform_ct_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['maintop'][0] = 'new-1';
+    $display->content['new-2'] = $pane;
+    $display->panels['center'][1] = 'new-2';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
-    $pane->panel = 'maintop';
+    $pane->pid = 'new-3';
+    $pane->panel = 'center';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_body';
     $pane->shown = TRUE;
@@ -103,18 +90,16 @@ function gsb_feature_webform_ct_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['maintop'][1] = 'new-2';
+    $display->content['new-3'] = $pane;
+    $display->panels['center'][2] = 'new-3';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'maintop';
+    $pane->pid = 'new-4';
+    $pane->panel = 'center';
     $pane->type = 'node_links';
     $pane->subtype = 'node_links';
     $pane->shown = TRUE;
@@ -128,19 +113,17 @@ function gsb_feature_webform_ct_panelizer_defaults() {
       'context' => 'panelizer',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array(
       'css_class' => 'link-wrapper',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['maintop'][2] = 'new-3';
+    $display->content['new-4'] = $pane;
+    $display->panels['center'][3] = 'new-4';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->title_pane = 'new-4';
   $panelizer->display = $display;
   $export['node:webform:default'] = $panelizer;
 
