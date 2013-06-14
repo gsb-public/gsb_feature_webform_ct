@@ -77,6 +77,10 @@ function gsb_feature_webform_ct_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),

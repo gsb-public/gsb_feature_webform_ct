@@ -50,7 +50,7 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'tiny' => array(
         'label' => 'above',
@@ -111,7 +111,7 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'tiny' => array(
         'label' => 'above',
