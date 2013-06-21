@@ -55,20 +55,32 @@ function gsb_feature_webform_ct_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_listing' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_upcoming' => array(
+        'custom_settings' => FALSE,
+      ),
+      'media_contact' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'workbench_access' => array(
-          'weight' => '2',
+          'weight' => '0',
         ),
       ),
       'display' => array(
@@ -254,6 +266,13 @@ function gsb_feature_webform_ct_strongarm() {
     'other' => 'other',
   );
   $export['panelizer_node:webform_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_webform_pattern';
+  $strongarm->value = '[node:menu-link:menu:associated-main-menu-alias]/[node:menu-link:parents:parent-full-path]/[node:field_pathauto_title_alias]';
+  $export['pathauto_node_webform_pattern'] = $strongarm;
 
   return $export;
 }
