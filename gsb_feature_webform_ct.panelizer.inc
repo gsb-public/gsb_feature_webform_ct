@@ -70,7 +70,7 @@ function gsb_feature_webform_ct_panelizer_defaults() {
         ),
         'counter_orientation' => 'horizontal',
         'extra_css' => '',
-        'share_services' => 'twitter, linkedin, facebook, google_plusone_share, email',
+        'share_services' => 'twitter, linkedin, facebook, google_plusone_share, compact',
       ),
       'context' => 'panelizer',
     );
