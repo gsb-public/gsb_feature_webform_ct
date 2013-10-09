@@ -274,5 +274,12 @@ function gsb_feature_webform_ct_strongarm() {
   $strongarm->value = '[node:menu-link:parents:parent-full-path]/[node:field_pathauto_title_alias]';
   $export['pathauto_node_webform_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_access_node_type_webform';
+  $strongarm->value = 1;
+  $export['workbench_access_node_type_webform'] = $strongarm;
+
   return $export;
 }

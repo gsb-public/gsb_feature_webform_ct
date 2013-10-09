@@ -36,6 +36,7 @@ features[variable][] = panelizer_node:webform_allowed_layouts_default
 features[variable][] = panelizer_node:webform_allowed_types_default
 features[variable][] = panelizer_node:webform_default
 features[variable][] = pathauto_node_webform_pattern
+features[variable][] = workbench_access_node_type_webform
 features_exclude[field][node-webform-field_addthis] = node-webform-field_addthis
 features_exclude[field][node-webform-field_body] = node-webform-field_body
 features_exclude[field][node-webform-body] = node-webform-body
