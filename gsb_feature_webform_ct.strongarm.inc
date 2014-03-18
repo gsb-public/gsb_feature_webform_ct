@@ -71,16 +71,19 @@ function gsb_feature_webform_ct_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'title' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'workbench_access' => array(
-          'weight' => '0',
+          'weight' => '1',
+        ),
+        'redirect' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(

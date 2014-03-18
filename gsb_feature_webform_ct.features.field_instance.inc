@@ -28,16 +28,6 @@ function gsb_feature_webform_ct_field_default_field_instances() {
             ),
           ),
           'counter_orientation' => 'horizontal',
-          'custom_link_to_entity' => '',
-          'custom_prefix' => '',
-          'custom_reverse' => '',
-          'custom_strip_preserve' => '',
-          'custom_strip_tags' => '',
-          'custom_strtolower' => '',
-          'custom_strtoupper' => '',
-          'custom_suffix' => '',
-          'custom_trim' => '',
-          'custom_ucfirst' => '',
           'extra_css' => '',
           'share_services' => 'twitter, linkedin, facebook, google_plusone_share, compact',
         ),
@@ -84,7 +74,7 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'addthis_button_widget',
-      'weight' => 5,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -101,16 +91,6 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
-          'custom_link_to_entity' => '',
-          'custom_prefix' => '',
-          'custom_reverse' => '',
-          'custom_strip_preserve' => '',
-          'custom_strip_tags' => '',
-          'custom_strtolower' => '',
-          'custom_strtoupper' => '',
-          'custom_suffix' => '',
-          'custom_trim' => '',
-          'custom_ucfirst' => '',
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -164,7 +144,7 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -221,7 +201,59 @@ function gsb_feature_webform_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'pathauto_title_alias_form',
-      'weight' => 2,
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-webform-field_submit'
+  $field_instances['node-webform-field_submit'] = array(
+    'bundle' => 'webform',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'submit_field_default',
+        'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_submit',
+    'label' => 'Submit',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'submit_field',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'submit_field',
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -230,6 +262,7 @@ function gsb_feature_webform_ct_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('AddThis');
   t('Body');
+  t('Submit');
   t('URL Alias');
 
   return $field_instances;
