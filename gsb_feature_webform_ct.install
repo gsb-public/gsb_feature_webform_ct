@@ -1,0 +1,7 @@
+<?php
+
+function gsb_feature_webform_ct_update_7000() {
+  if (!module_exists('webform_addmore')) {
+    module_enable(array('webform_addmore'));
+  }
+}

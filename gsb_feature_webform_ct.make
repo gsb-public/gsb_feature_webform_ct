@@ -6,3 +6,6 @@ projects[options_element][subdir] = contrib
 
 projects[webform][version] = 3.20
 projects[webform][subdir] = contrib
+
+projects[webform_addmore][version] = 1.2
+projects[webform_addmore][subdir] = contrib
