@@ -9,3 +9,4 @@ projects[webform][subdir] = contrib
 
 projects[webform_addmore][version] = 1.2
 projects[webform_addmore][subdir] = contrib
+projects[webform_addmore][patch][webform_addmore-js] = https://raw.github.com/gsbitse/gsb-revamp-patches/master/webform_addmore-parent-js.patch
