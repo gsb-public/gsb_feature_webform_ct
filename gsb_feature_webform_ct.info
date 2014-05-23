@@ -17,6 +17,7 @@ dependencies[] = submit_field
 dependencies[] = text
 dependencies[] = webform
 dependencies[] = webform_addmore
+dependencies[] = webform_phone
 datestamp = 1371226760
 features[ctools][] = panelizer:panelizer:1
 features[ctools][] = strongarm:strongarm:1
