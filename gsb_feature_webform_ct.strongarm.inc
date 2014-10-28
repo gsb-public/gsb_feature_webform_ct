@@ -121,8 +121,9 @@ function gsb_feature_webform_ct_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_webform';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    0 => 'force_pathauto',
+    1 => 'moderation',
+    2 => 'revision',
   );
   $export['node_options_webform'] = $strongarm;
 
