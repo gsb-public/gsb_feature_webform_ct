@@ -1,7 +1,7 @@
 api = 2
 core = 7.x
 
-projects[webform][version] = 3.24
+projects[webform][version] = 4.10
 projects[webform][subdir] = contrib
 
 projects[webform_addmore][version] = 1.2
