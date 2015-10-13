@@ -40,11 +40,57 @@ function gsb_feature_webform_ct_panelizer_defaults() {
   );
   $display->cache = array();
   $display->title = '%node:title';
-  $display->uuid = 'f9ebd674-20c7-433e-9151-ed05381a35a1';
+  $display->uuid = '22e8b327-82e1-4c58-84ec-7be3286563d0';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-afef8892-cb9d-4336-856f-aa080d240615';
+    $pane->pid = 'new-54bee82e-7c69-4283-8279-e532c8430910';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'smart_trim_format',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'trim_length' => '300',
+        'trim_type' => 'chars',
+        'trim_suffix' => '...',
+        'trim_link' => '0',
+        'more_link' => '0',
+        'more_text' => 'Read more',
+        'trim_options' => array(
+          'text' => 0,
+        ),
+        'trim_preserve_tags' => '',
+        'conditions' => array(
+          0 => array(
+            'condition' => '',
+          ),
+        ),
+      ),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '54bee82e-7c69-4283-8279-e532c8430910';
+    $display->content['new-54bee82e-7c69-4283-8279-e532c8430910'] = $pane;
+    $display->panels['center'][0] = 'new-54bee82e-7c69-4283-8279-e532c8430910';
+    $pane = new stdClass();
+    $pane->pid = 'new-b849b5cb-8946-4cdd-ba35-4ba519e5f1d2';
     $pane->panel = 'center';
     $pane->type = 'entity_field_extra';
     $pane->subtype = 'node:webform';
@@ -63,13 +109,13 @@ function gsb_feature_webform_ct_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'afef8892-cb9d-4336-856f-aa080d240615';
-    $display->content['new-afef8892-cb9d-4336-856f-aa080d240615'] = $pane;
-    $display->panels['center'][0] = 'new-afef8892-cb9d-4336-856f-aa080d240615';
+    $pane->uuid = 'b849b5cb-8946-4cdd-ba35-4ba519e5f1d2';
+    $display->content['new-b849b5cb-8946-4cdd-ba35-4ba519e5f1d2'] = $pane;
+    $display->panels['center'][1] = 'new-b849b5cb-8946-4cdd-ba35-4ba519e5f1d2';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-afef8892-cb9d-4336-856f-aa080d240615';
+  $display->title_pane = 'new-b849b5cb-8946-4cdd-ba35-4ba519e5f1d2';
   $panelizer->display = $display;
   $export['node:webform:default'] = $panelizer;
 
