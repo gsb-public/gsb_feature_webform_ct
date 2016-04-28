@@ -5,3 +5,23 @@
  */
 
 include_once 'gsb_feature_webform_ct.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_webform_ct_form_node_form_alter(&$form, &$form_state) {
+  if ($form['type']['#value'] != 'webform') {
+    return;
+  }
+  $language = $form['language']['#value'];
+  unset($form['field_hero_region_options'][$language]['#options']['_none']);
+
+  // show/hide the image field
+  $form['field_image_single_public']['#states'] = array(
+    'visible' => array(
+      ':input[name="field_hero_region_options[' . $language . ']"]' => array(
+        array('value' => 'image'),
+      ),
+    ),
+  );
+}
