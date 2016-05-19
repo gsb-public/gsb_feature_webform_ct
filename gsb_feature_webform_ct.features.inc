@@ -8,10 +8,10 @@
  * Implements hook_ctools_plugin_api().
  */
 function gsb_feature_webform_ct_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "panelizer" && $api == "panelizer") {
+  if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
-  if ($module == "field_group" && $api == "field_group") {
+  if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
   if ($module == "strongarm" && $api == "strongarm") {
