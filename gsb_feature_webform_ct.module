@@ -111,3 +111,14 @@ function gsb_feature_webform_ct_page_alter(&$page) {
     drupal_add_js(drupal_get_path('module', 'gsb_feature_webform_ct') . '/js/gsb_feature_webform_ct_slideshow_slick.js');
   }
 }
+
+/**
+ * Implements hook_js_alter().
+ */
+function gsb_feature_webform_ct_js_alter(&$javascript) {
+  // Force webform.js to come after jquery.customSelect.min.js
+  if (!empty($javascript['profiles/gsb_public/modules/contrib/webform/js/webform.js']) && !empty($javascript['profiles/gsb_public/themes/gsb_theme/js/libs/jquery.customSelect.min.js'])) {
+    $javascript['profiles/gsb_public/modules/contrib/webform/js/webform.js']['weight'] = $javascript['profiles/gsb_public/themes/gsb_theme/js/libs/jquery.customSelect.min.js']['weight'] + 1;
+    $javascript['profiles/gsb_public/modules/contrib/webform/js/webform.js']['group'] = $javascript['profiles/gsb_public/themes/gsb_theme/js/libs/jquery.customSelect.min.js']['group'];
+  }
+}
