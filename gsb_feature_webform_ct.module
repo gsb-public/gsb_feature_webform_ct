@@ -83,6 +83,13 @@ function gsb_feature_webform_ct_form_validate(&$form, &$form_state) {
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_webform_ct_form_webform_to_gdocs_attach_form_alter(&$form, &$form_state)
+{
+  $form['gdoc_id']['#description'] = $form['gdoc_id']['#description'] . "<br/>" . 'Important: The google spreadsheet needs to be shared with the following account: gsbpublicsitewebform@gmail.com';
+}
 
 /**
  * Implements hook_library()
@@ -127,7 +134,7 @@ function gsb_feature_webform_ct_js_alter(&$javascript) {
  * Implements hook_webform_submission_create_alter().
  */
 function gsb_feature_webform_ct_webform_submission_create_alter(&$submission, &$node, &$account, &$form_state) {
-  // For webforms that send data to gdocs, we want to change the file data from 
+  // For webforms that send data to gdocs, we want to change the file data from
   // a fid to the url of the file.
   $qresult = db_query("SELECT * FROM {webform_to_gdocs_webforms} gw WHERE gw.nid = :nid LIMIT 1", array(':nid' =>$node->nid));
   $gdoc_exists = $qresult->fetchAssoc();
@@ -147,4 +154,3 @@ function gsb_feature_webform_ct_webform_submission_create_alter(&$submission, &$
     }
   }
 }
-
