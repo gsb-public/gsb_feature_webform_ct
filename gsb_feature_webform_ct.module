@@ -134,11 +134,11 @@ function gsb_feature_webform_ct_js_alter(&$javascript) {
  * Implements hook_webform_submission_create_alter().
  */
 function gsb_feature_webform_ct_webform_submission_create_alter(&$submission, &$node, &$account, &$form_state) {
-  // For webforms that send data to gdocs, we want to change the file data from
-  // a fid to the url of the file.
   $qresult = db_query("SELECT * FROM {webform_to_gdocs_webforms} gw WHERE gw.nid = :nid LIMIT 1", array(':nid' =>$node->nid));
   $gdoc_exists = $qresult->fetchAssoc();
   if ($gdoc_exists) {
+    // For webforms that send data to gdocs, we want to change the file data from
+    // a fid to the url of the file.
     $result = db_select('webform_component', 'wc', array('fetch' => PDO::FETCH_ASSOC))
       ->fields('wc')
       ->condition('type', 'file')
@@ -150,6 +150,19 @@ function gsb_feature_webform_ct_webform_submission_create_alter(&$submission, &$
         $uri = $file->uri;
         $url = file_create_url($uri);
         $submission->data[$component['cid']][0] = $url;
+      }
+    }
+    // And we want to change the phone number to not have a +1 country code
+    $result = db_select('webform_component', 'wc', array('fetch' => PDO::FETCH_ASSOC))
+      ->fields('wc')
+      ->condition('type', 'phone')
+      ->condition('nid', $node->nid)
+      ->execute();
+    foreach ($result as $component) {
+      if (!empty($submission->data[$component['cid']][0])) {
+        $phone_number = $submission->data[$component['cid']][0];
+        $phone_number = str_replace("+1", "", $phone_number );
+        $submission->data[$component['cid']][0] = $phone_number;
       }
     }
   }
