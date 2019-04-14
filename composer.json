@@ -1,5 +1,5 @@
 {
-  "name": "drupal/gsb_feature_webform_ct",
+  "name": "gsb/gsb_feature_webform_ct",
   "description": "GSB Feature Webform Content Type",
   "license": "Apache-2.0",  
   "require": {
@@ -11,15 +11,13 @@
     "ext-pdo": "*",
     "ext-xml": "*",
     "cweagans/composer-patches": "^1.6.5",
+    "oomphinc/composer-installers-extender": "^1.1",
     "drupal/webform": "4.16",
     "drupal/webform_addmore": "1.2",
     "drupal/webform_phone": "1.4"
   },
   "extra": {
     "patches": {
-      "cweagans/composer-patches": {
-        "Call the preserve paths hooks" : "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
-      },
       "drupal/webform_addmore": {
         "webform_addmore-js": "https://raw.githubusercontent.com/gsbitse/gsb-revamp-patches/master/webform_addmore-parent-js.patch"  
       }
